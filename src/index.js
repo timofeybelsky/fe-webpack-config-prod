@@ -1,4 +1,4 @@
-import styles from './assets/style.scss';
+import styles from './assets/sass/style.scss';
 
 const greeting = document.createElement( 'h1' );
 

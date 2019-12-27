@@ -1,7 +1,5 @@
 const path = require( 'path' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
-const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   entry: './src/index.js',
@@ -10,10 +8,7 @@ const config = {
     path: path.resolve( __dirname, '../build' )
   },
   plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
 
-                             }),
     new HtmlWebpackPlugin( {
                              template: './src/index.html',
                              meta: {
@@ -31,6 +26,12 @@ const config = {
         use: [
           {
             loader: 'file-loader',
+
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'static/images/',
+              publicPath: 'static/images/',
+            }
           }
         ]
       },
@@ -42,6 +43,11 @@ const config = {
         use: [
           {
             loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'static/fonts/',
+              publicPath: 'static/fonts/',
+            }
           }
         ]
       }

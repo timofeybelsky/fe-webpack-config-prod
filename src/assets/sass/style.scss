@@ -1,6 +1,13 @@
+
 $mobile-end: 568px;
 $tablet-end: 768px;
 
+body{
+  background-image: url('../images/banner.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 .test{
   color: green;

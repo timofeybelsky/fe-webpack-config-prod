@@ -1,6 +1,7 @@
 const merge = require( 'webpack-merge' );
 const commonConfig = require( './webpack.config.common.js' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 
 const productionConfig = merge( commonConfig, {
   mode: 'production',
@@ -16,6 +17,10 @@ const productionConfig = merge( commonConfig, {
       },
     },
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(  ),
+  ],
   module: {
     rules: [
       /*
@@ -26,7 +31,7 @@ const productionConfig = merge( commonConfig, {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {},
+
           },
           {
             loader: 'css-loader',
