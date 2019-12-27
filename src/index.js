@@ -1,4 +1,7 @@
-import styles from './assets/style.scss';
+import styles from './assets/sass/style.scss';
+import _      from 'lodash';
+
+console.log( _.uniq( [2, 1, 2] ) );
 
 const greeting = document.createElement( 'h1' );
 
